@@ -126,19 +126,19 @@
         "sectionsDict": {
           "Battleline": {
             "isHidden": "no",
-            "height": 20,
+            "height": 17,
             "alignment": "CENTER",
             "isHorizontalAllowed": true
           },
           "Artifacts": {
             "isHidden": "no",
-            "height": 14,
+            "height": 11,
             "alignment": "START",
             "isHorizontalAllowed": true
           },
           "Archives": {
             "isHidden": "opponent-only",
-            "height": 14,
+            "height": 11,
             "alignment": "START",
             "displayedTitle": "Archives (cartas guardadas)"
           }
