@@ -1,7 +1,7 @@
 {
   "name": "KeyForge",
   "cardRotation": 90,
-  "customHelp": "Aember pool = player counter. Forge keys by dragging the key tokens.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.",
+  "customHelp": "Æmber: use the number box in the panel. Keys: click a key to mark it as forged.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.",
   "deckBuilding": {
     "mainFilters": [
       "type",
@@ -26,9 +26,7 @@
   "gameplay": {
     "Standard": {
       "defaultNotes": "Active house: \nKeys forged: 0",
-      "countersStartingValues": [
-        0
-      ],
+      "countersStartingValues": [],
       "mulligan": {
         "startingHandSize": 6,
         "mulliganCount": {
@@ -114,9 +112,15 @@
                   "section": "Artifacts"
                 },
                 {
+                  "section": "Tracker",
+                  "style": {
+                    "width": "20%"
+                  }
+                },
+                {
                   "section": "Archives",
                   "style": {
-                    "width": "22%"
+                    "width": "20%"
                   }
                 }
               ]
@@ -133,7 +137,7 @@
           "Artifacts": {
             "isHidden": "no",
             "height": 14,
-            "alignment": "START",
+            "alignment": "CENTER",
             "isHorizontalAllowed": true
           },
           "Archives": {
@@ -141,6 +145,99 @@
             "height": 14,
             "alignment": "START",
             "displayedTitle": "Archives (cartas guardadas)"
+          },
+          "Tracker": {
+            "type": "custom",
+            "defaultValue": {
+              "aember": 0,
+              "red": false,
+              "blue": false,
+              "yellow": false
+            },
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "gap": "1vh",
+                  "height": "100%",
+                  "color": "#ffffff",
+                  "fontSize": "2vh"
+                }
+              },
+              "children": [
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "alignItems": "center",
+                      "gap": "0.8vh"
+                    }
+                  },
+                  "children": [
+                    "Æmber",
+                    {
+                      "type": "input-number",
+                      "props": {
+                        "value": "{{ game.data.Tracker.aember }}"
+                      },
+                      "onChange": "game.data.Tracker.aember = value; chatLog('Æmber: ' + value)"
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "props": {
+                    "style": {
+                      "display": "flex",
+                      "gap": "0.6vh"
+                    }
+                  },
+                  "children": [
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "2.4vh",
+                          "padding": "0.4vh 0.8vh",
+                          "cursor": "pointer"
+                        }
+                      },
+                      "children": "{{ game.data.Tracker.red ? '🔑🔴' : '⬜🔴' }}",
+                      "onClick": "game.data.Tracker.red = !game.data.Tracker.red; chatLog(game.data.Tracker.red ? 'forged the red key' : 'unforged the red key')"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "2.4vh",
+                          "padding": "0.4vh 0.8vh",
+                          "cursor": "pointer"
+                        }
+                      },
+                      "children": "{{ game.data.Tracker.blue ? '🔑🔵' : '⬜🔵' }}",
+                      "onClick": "game.data.Tracker.blue = !game.data.Tracker.blue; chatLog(game.data.Tracker.blue ? 'forged the blue key' : 'unforged the blue key')"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "2.4vh",
+                          "padding": "0.4vh 0.8vh",
+                          "cursor": "pointer"
+                        }
+                      },
+                      "children": "{{ game.data.Tracker.yellow ? '🔑🟡' : '⬜🟡' }}",
+                      "onClick": "game.data.Tracker.yellow = !game.data.Tracker.yellow; chatLog(game.data.Tracker.yellow ? 'forged the yellow key' : 'unforged the yellow key')"
+                    }
+                  ]
+                }
+              ]
+            }
           }
         }
       }

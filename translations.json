@@ -55,7 +55,7 @@
       "YellowKey": "Llave amarilla"
     },
     "UI text": {
-      "Aember pool = player counter. Forge keys by dragging the key tokens.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.": "Reserva de Æmber = contador del jugador. Forja llaves arrastrando las fichas de llave.\nAgotar una carta = girarla. Roba hasta tener 6 cartas al final de tu turno."
+      "Æmber: use the number box in the panel. Keys: click a key to mark it as forged.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.": "Æmber: usa la casilla numérica del panel. Llaves: pulsa una llave para marcarla como forjada.\nAgotar una carta = girarla. Roba hasta tener 6 cartas al final de tu turno."
     }
   }
 }
