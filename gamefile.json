@@ -1,0 +1,158 @@
+{
+  "name": "KeyForge",
+  "cardRotation": 90,
+  "customHelp": "Aember pool = player counter. Forge keys by dragging the key tokens.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.",
+  "deckBuilding": {
+    "mainFilters": [
+      "type",
+      "house",
+      "rarity"
+    ],
+    "formats": [
+      {
+        "title": "Archon Standard",
+        "gameplay": "Standard",
+        "deckRuleset": "Archon"
+      }
+    ],
+    "deckRulesets": {
+      "Archon": {
+        "general": {
+          "min": 36
+        }
+      }
+    }
+  },
+  "gameplay": {
+    "Standard": {
+      "defaultNotes": "Active house: \nKeys forged: 0",
+      "countersStartingValues": [
+        0
+      ],
+      "mulligan": {
+        "startingHandSize": 6,
+        "mulliganCount": {
+          "max": 1
+        },
+        "mulliganCycle": {
+          "info": "Mulligan: shuffle your hand into your deck and draw one fewer card.",
+          "steps": [
+            "toBottom",
+            "shuffle",
+            "applyPenalty",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 6,
+            "max": 99
+          }
+        }
+      },
+      "newTurn": {
+        "drawOnStart": false
+      },
+      "tokens": [
+        {
+          "name": "RedKey",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/key-red.png",
+          "isUnique": true
+        },
+        {
+          "name": "BlueKey",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/key-blue.png",
+          "isUnique": true
+        },
+        {
+          "name": "YellowKey",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/key-yellow.png",
+          "isUnique": true
+        }
+      ],
+      "draggableTokens": [
+        {
+          "id": "Aember",
+          "name": "Aember",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/aember.png"
+        },
+        {
+          "id": "Damage",
+          "name": "Damage",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/damage.png"
+        },
+        {
+          "id": "Power",
+          "name": "Power counter",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/power.png"
+        },
+        {
+          "id": "Stun",
+          "name": "Stun",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/stun.png"
+        },
+        {
+          "id": "Ward",
+          "name": "Ward",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/ward.png"
+        },
+        {
+          "id": "Enrage",
+          "name": "Enrage",
+          "image": "https://h1aloha.github.io/keyforge-tcga/img/enrage.png"
+        }
+      ],
+      "sections": {
+        "layout": {
+          "direction": "column",
+          "content": [
+            {
+              "section": "Battleline"
+            },
+            {
+              "direction": "row",
+              "content": [
+                {
+                  "section": "Artifacts"
+                },
+                {
+                  "section": "Archives",
+                  "style": {
+                    "width": "25%"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "sectionsDict": {
+          "Battleline": {
+            "isHidden": "no",
+            "height": 30,
+            "alignment": "CENTER",
+            "isHorizontalAllowed": true
+          },
+          "Artifacts": {
+            "isHidden": "no",
+            "height": 22,
+            "alignment": "START",
+            "isHorizontalAllowed": true
+          },
+          "Archives": {
+            "isHidden": "opponent-only",
+            "height": 22,
+            "alignment": "START",
+            "displayedTitle": "Archives"
+          }
+        }
+      }
+    }
+  },
+  "defaultRessources": {
+    "backgrounds": []
+  },
+  "cards": {
+    "dataUrl": "https://h1aloha.github.io/keyforge-tcga/cards.json",
+    "cardBack": "https://h1aloha.github.io/keyforge-tcga/img/card-back.jpg",
+    "cardBackColor": "#2b2b2b"
+  },
+  "translationsUrl": "https://h1aloha.github.io/keyforge-tcga/translations.json"
+}

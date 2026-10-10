@@ -1,0 +1,54 @@
+{
+  "additionalLanguages": [
+    "es"
+  ],
+  "en": {},
+  "es": {
+    "Card types": {
+      "Creature": "Criatura",
+      "Action": "Acción",
+      "Artifact": "Artefacto",
+      "Upgrade": "Mejora",
+      "Token Creature": "Criatura ficha",
+      "Archon Power": "Poder de Archon",
+      "Prophecy": "Profecía",
+      "The Tide": "La Marea"
+    },
+    "Rarities": {
+      "Common": "Común",
+      "Uncommon": "Poco común",
+      "Rare": "Rara",
+      "Special": "Especial",
+      "Variant": "Variante",
+      "Token": "Ficha",
+      "FIXED": "Fija",
+      "Evil Twin": "Gemelo malvado",
+      "The Tide": "La Marea"
+    },
+    "Sections": {
+      "Battleline": "Línea de batalla",
+      "Artifacts": "Artefactos",
+      "Archives": "Archivos",
+      "Hand": "Mano",
+      "Deck": "Mazo",
+      "Discard": "Descarte"
+    },
+    "Formats": {
+      "Archon Standard": "Estándar de Archon"
+    },
+    "Tokens": {
+      "Aember": "Æmber",
+      "Damage": "Daño",
+      "Power counter": "Contador de poder",
+      "Stun": "Aturdido",
+      "Ward": "Protección",
+      "Enrage": "Enfurecido",
+      "RedKey": "Llave roja",
+      "BlueKey": "Llave azul",
+      "YellowKey": "Llave amarilla"
+    },
+    "UI text": {
+      "Aember pool = player counter. Forge keys by dragging the key tokens.\nExhaust a card = rotate it. Draw back up to 6 cards at the end of your turn.": "Reserva de Æmber = contador del jugador. Forja llaves arrastrando las fichas de llave.\nAgotar una carta = girarla. Roba hasta tener 6 cartas al final de tu turno."
+    }
+  }
+}
