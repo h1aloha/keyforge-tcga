@@ -42,17 +42,21 @@ for (const file of fs.readdirSync(packsDir).filter((f) => f.endsWith('.json')).s
     const type = titleCase(c.type)
     const house = [].concat(c.house).map((h) => HOUSES[h] ?? titleCase(h))
 
+    // NAME_MODE=bilingual (por defecto): "Furia / Anger", así la búsqueda funciona en ambos idiomas.
+    // NAME_MODE=translated: objeto {en, es} que depende del selector de idioma de la app.
+    const bilingual = es && es !== en ? `${es} / ${en}` : en
+    const translated = process.env.NAME_MODE === 'translated'
     const card = {
       id,
       face: {
         front: {
-          name: { name: en, en, es },
+          name: translated ? { name: en, en, es } : { name: bilingual },
           type,
           cost: 0,
           image: c.image
         }
       },
-      name: { en, es },
+      name: translated ? { en, es } : bilingual,
       type,
       cost: 0,
       house,
@@ -77,7 +81,9 @@ console.log(`cards.json: ${Object.keys(cards).length} cartas`, perPack)
 
 const translations = {
   additionalLanguages: ['es'],
-  en: {},
+  en: {
+    'Card types': { Creature: 'Creature', Action: 'Action', Artifact: 'Artifact', Upgrade: 'Upgrade' }
+  },
   es: {
     'Card types': {
       Creature: 'Criatura', Action: 'Acción', Artifact: 'Artefacto', Upgrade: 'Mejora',
