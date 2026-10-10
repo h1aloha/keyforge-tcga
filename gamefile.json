@@ -116,7 +116,7 @@
                 {
                   "section": "Archives",
                   "style": {
-                    "width": "25%"
+                    "width": "22%"
                   }
                 }
               ]
@@ -126,21 +126,21 @@
         "sectionsDict": {
           "Battleline": {
             "isHidden": "no",
-            "height": 30,
+            "height": 20,
             "alignment": "CENTER",
             "isHorizontalAllowed": true
           },
           "Artifacts": {
             "isHidden": "no",
-            "height": 22,
+            "height": 14,
             "alignment": "START",
             "isHorizontalAllowed": true
           },
           "Archives": {
             "isHidden": "opponent-only",
-            "height": 22,
+            "height": 14,
             "alignment": "START",
-            "displayedTitle": "Archives"
+            "displayedTitle": "Archives (cartas guardadas)"
           }
         }
       }
