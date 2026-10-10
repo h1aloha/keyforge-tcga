@@ -114,13 +114,13 @@
                 {
                   "section": "Tracker",
                   "style": {
-                    "width": "20%"
+                    "width": "30%"
                   }
                 },
                 {
                   "section": "Archives",
                   "style": {
-                    "width": "20%"
+                    "width": "18%"
                   }
                 }
               ]
@@ -154,6 +154,9 @@
               "blue": false,
               "yellow": false
             },
+            "events": {
+              "onStart": "game.data.Tracker.aember = 0; game.data.Tracker.red = false; game.data.Tracker.blue = false; game.data.Tracker.yellow = false"
+            },
             "blueprint": {
               "type": "div",
               "props": {
@@ -162,10 +165,10 @@
                   "flexDirection": "column",
                   "alignItems": "center",
                   "justifyContent": "center",
-                  "gap": "1vh",
+                  "gap": "1.2vh",
                   "height": "100%",
                   "color": "#ffffff",
-                  "fontSize": "2vh"
+                  "fontSize": "2.2vh"
                 }
               },
               "children": [
@@ -175,17 +178,46 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "0.8vh"
+                      "gap": "1vh"
                     }
                   },
                   "children": [
                     "Æmber",
                     {
-                      "type": "input-number",
+                      "type": "button",
                       "props": {
-                        "value": "{{ game.data.Tracker.aember }}"
+                        "style": {
+                          "fontSize": "2.2vh",
+                          "padding": "0.3vh 1vh",
+                          "cursor": "pointer"
+                        }
                       },
-                      "onChange": "game.data.Tracker.aember = value; chatLog('Æmber: ' + value)"
+                      "children": "−",
+                      "onClick": "game.data.Tracker.aember = Math.max(0, Number(game.data.Tracker.aember || 0) - 1); try { functions.chatLog('Æmber: ' + game.data.Tracker.aember) } catch (e) {}"
+                    },
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "minWidth": "3vh",
+                          "textAlign": "center",
+                          "fontSize": "3vh",
+                          "fontWeight": "bold"
+                        }
+                      },
+                      "children": "{{ game.data.Tracker.aember }}"
+                    },
+                    {
+                      "type": "button",
+                      "props": {
+                        "style": {
+                          "fontSize": "2.2vh",
+                          "padding": "0.3vh 1vh",
+                          "cursor": "pointer"
+                        }
+                      },
+                      "children": "+",
+                      "onClick": "game.data.Tracker.aember = Number(game.data.Tracker.aember || 0) + 1; try { functions.chatLog('Æmber: ' + game.data.Tracker.aember) } catch (e) {}"
                     }
                   ]
                 },
@@ -194,7 +226,7 @@
                   "props": {
                     "style": {
                       "display": "flex",
-                      "gap": "0.6vh"
+                      "gap": "0.8vh"
                     }
                   },
                   "children": [
@@ -202,37 +234,37 @@
                       "type": "button",
                       "props": {
                         "style": {
-                          "fontSize": "2.4vh",
-                          "padding": "0.4vh 0.8vh",
+                          "fontSize": "2.2vh",
+                          "padding": "0.3vh 1vh",
                           "cursor": "pointer"
                         }
                       },
-                      "children": "{{ game.data.Tracker.red ? '🔑🔴' : '⬜🔴' }}",
-                      "onClick": "game.data.Tracker.red = !game.data.Tracker.red; chatLog(game.data.Tracker.red ? 'forged the red key' : 'unforged the red key')"
+                      "children": "{{ game.data.Tracker.red ? '🔴 ✔' : '🔴 ✖' }}",
+                      "onClick": "game.data.Tracker.red = game.data.Tracker.red ? false : true; try { functions.chatLog(game.data.Tracker.red ? 'forged the red key' : 'unforged the red key') } catch (e) {}"
                     },
                     {
                       "type": "button",
                       "props": {
                         "style": {
-                          "fontSize": "2.4vh",
-                          "padding": "0.4vh 0.8vh",
+                          "fontSize": "2.2vh",
+                          "padding": "0.3vh 1vh",
                           "cursor": "pointer"
                         }
                       },
-                      "children": "{{ game.data.Tracker.blue ? '🔑🔵' : '⬜🔵' }}",
-                      "onClick": "game.data.Tracker.blue = !game.data.Tracker.blue; chatLog(game.data.Tracker.blue ? 'forged the blue key' : 'unforged the blue key')"
+                      "children": "{{ game.data.Tracker.blue ? '🔵 ✔' : '🔵 ✖' }}",
+                      "onClick": "game.data.Tracker.blue = game.data.Tracker.blue ? false : true; try { functions.chatLog(game.data.Tracker.blue ? 'forged the blue key' : 'unforged the blue key') } catch (e) {}"
                     },
                     {
                       "type": "button",
                       "props": {
                         "style": {
-                          "fontSize": "2.4vh",
-                          "padding": "0.4vh 0.8vh",
+                          "fontSize": "2.2vh",
+                          "padding": "0.3vh 1vh",
                           "cursor": "pointer"
                         }
                       },
-                      "children": "{{ game.data.Tracker.yellow ? '🔑🟡' : '⬜🟡' }}",
-                      "onClick": "game.data.Tracker.yellow = !game.data.Tracker.yellow; chatLog(game.data.Tracker.yellow ? 'forged the yellow key' : 'unforged the yellow key')"
+                      "children": "{{ game.data.Tracker.yellow ? '🟡 ✔' : '🟡 ✖' }}",
+                      "onClick": "game.data.Tracker.yellow = game.data.Tracker.yellow ? false : true; try { functions.chatLog(game.data.Tracker.yellow ? 'forged the yellow key' : 'unforged the yellow key') } catch (e) {}"
                     }
                   ]
                 }
