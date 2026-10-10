@@ -103,7 +103,19 @@
           "direction": "column",
           "content": [
             {
-              "section": "Battleline"
+              "direction": "row",
+              "content": [
+                {
+                  "section": "Battleline"
+                },
+                {
+                  "section": "Markers",
+                  "style": {
+                    "width": "12vh",
+                    "flexShrink": 0
+                  }
+                }
+              ]
             },
             {
               "direction": "row",
@@ -114,7 +126,8 @@
                 {
                   "section": "Tracker",
                   "style": {
-                    "width": "30%"
+                    "width": "26vh",
+                    "flexShrink": 0
                   }
                 },
                 {
@@ -178,11 +191,22 @@
                     "style": {
                       "display": "flex",
                       "alignItems": "center",
-                      "gap": "1vh"
+                      "gap": "1.2vh",
+                      "flexWrap": "nowrap"
                     }
                   },
                   "children": [
-                    "Æmber",
+                    {
+                      "type": "span",
+                      "props": {
+                        "style": {
+                          "whiteSpace": "nowrap",
+                          "marginRight": "0.8vh",
+                          "fontSize": "2.2vh"
+                        }
+                      },
+                      "children": "Æmber"
+                    },
                     {
                       "type": "button",
                       "props": {
@@ -267,6 +291,104 @@
                       "onClick": "game.data.Tracker.yellow = game.data.Tracker.yellow ? false : true; try { functions.chatLog(game.data.Tracker.yellow ? 'forged the yellow key' : 'unforged the yellow key') } catch (e) {}"
                     }
                   ]
+                }
+              ]
+            }
+          },
+          "Markers": {
+            "type": "custom",
+            "defaultValue": {},
+            "blueprint": {
+              "type": "div",
+              "props": {
+                "style": {
+                  "display": "flex",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                  "alignContent": "center",
+                  "gap": "0.8vh",
+                  "height": "100%",
+                  "padding": "0.5vh"
+                }
+              },
+              "children": [
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Æmber",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "🟠",
+                  "onClick": "await functions.createCard('marker-aember', 'Battleline')"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Daño / Damage",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "💥",
+                  "onClick": "await functions.createCard('marker-damage', 'Battleline')"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Contador de poder / Power counter",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "➕",
+                  "onClick": "await functions.createCard('marker-power', 'Battleline')"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Aturdido / Stun",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "💫",
+                  "onClick": "await functions.createCard('marker-stun', 'Battleline')"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Protección / Ward",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "🛡️",
+                  "onClick": "await functions.createCard('marker-ward', 'Battleline')"
+                },
+                {
+                  "type": "button",
+                  "props": {
+                    "title": "Enfurecido / Enrage",
+                    "style": {
+                      "fontSize": "2.4vh",
+                      "padding": "0.3vh 0.8vh",
+                      "cursor": "pointer"
+                    }
+                  },
+                  "children": "😡",
+                  "onClick": "await functions.createCard('marker-enrage', 'Battleline')"
                 }
               ]
             }
