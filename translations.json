@@ -7,7 +7,8 @@
       "Creature": "Creature",
       "Action": "Action",
       "Artifact": "Artifact",
-      "Upgrade": "Upgrade"
+      "Upgrade": "Upgrade",
+      "Marker": "Marker"
     }
   },
   "es": {
@@ -19,7 +20,8 @@
       "Token Creature": "Criatura ficha",
       "Archon Power": "Poder de Archon",
       "Prophecy": "Profecía",
-      "The Tide": "La Marea"
+      "The Tide": "La Marea",
+      "Marker": "Marcador"
     },
     "Rarities": {
       "Common": "Común",
